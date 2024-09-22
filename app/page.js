@@ -1,15 +1,33 @@
+"use client";
+import { useState } from 'react';
+import SubscribeForm from '../components/SubscribeForm';
+import Button from "@/components/Button";
+import Card from "@/components/Card";
+import CardFlip from "@/components/CardFlip";
+
 export default function Home() {
+    const [isFlipped, setIsFlipped] = useState(false);
+
+    const handleFlip = () => {
+        setIsFlipped(!isFlipped); // Toggle flip state
+    };
+
     return (
-            <div className="flex flex-grow justify-center items-center">
-                <div className="text-center p-10 rounded-lg shadow-xl max-w-lg">
-                    <h2 className="text-4xl md:text-5xl font-bold mb-4">We're Crafting Our Site!</h2>
-                    <p className="text-lg md:text-xl mb-6">Our website is currently under construction. Stay tuned for
-                        something amazing.</p>
-                    <button
-                        className="bg-white text-blue-700 py-2 px-6 rounded-md font-medium hover:bg-blue-50 transition-colors">
-                        Subscribe to be notified
-                    </button>
-                </div>
-            </div>
+        <div className="flex flex-grow justify-center items-center">
+            <CardFlip
+                flipTrigger ={isFlipped}
+                frontCard={
+                    <Card
+                        title="We're Crafting Our Site!"
+                        description="Our website is currently under construction. Stay tuned for something amazing."
+                    >
+                        <Button text="Subscribe to be notified" onClick={handleFlip} />
+                    </Card>
+                }
+                backCard={
+                    <SubscribeForm onClose={handleFlip} />
+                }
+            />
+        </div>
     );
 }
