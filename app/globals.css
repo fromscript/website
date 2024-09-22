@@ -3,25 +3,34 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Brockmann';
-  src: url('../public/fonts/brockmann-regular-webfont.woff2') format('woff2'),
-  url('../public/fonts/brockmann-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+    font-family: 'Brockmann';
+    src: url('../public/fonts/brockmann-regular-webfont.woff2') format('woff2'),
+    url('../public/fonts/brockmann-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
+
 html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 *, *:before, *:after {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.backface-hidden {
+    backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+    transform: rotateY(180deg);
 }
