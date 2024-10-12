@@ -1,0 +1,76 @@
+.companyLogoIcon {
+    width: 554px;
+    position: relative;
+    height: 238px;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+.content {
+    width: 80px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.progressBar {
+    width: 100px;
+    position: relative;
+    background-color: #fff;
+    height: 4px;
+}
+.progress {
+    align-self: stretch;
+    background-color: #174256;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.chargement {
+    position: relative;
+    line-height: 140%;
+}
+.percentage {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+.content1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.loadingAnimation {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 12px;
+}
+.loader4 {
+    width: 100%;
+    position: relative;
+    height: 900px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    background-image: url('Loader / 4 /.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    text-align: left;
+    font-size: 20px;
+    color: #fef3f2;
+    font-family: Brockmann;
+}
+

@@ -7,15 +7,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        white: '#efeeea',
+        red: {
+          '100': '#fef3f2',
+        },
+        black: '#000000',
+        white: '#ffffff',
         blue: {
-          '500': '#5594ab',
-          '700': '#1c4256',
+          '500': '#64a8c5',
+          '700': '#174256',
           '800': '#071827',
         }
       },
       fontFamily: {
-        'brockmann': ['Brockmann', 'Arial', 'sans-serif']
+        sans: ['Montserrat', 'Arial', 'sans-serif'], // Default font
+        brockmann: ['Brockmann', 'sans-serif'], // Specific use font
       }
     },
   },
