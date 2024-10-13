@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import React from 'react';
-import SectionScrollButton from "./SectionScrollButton";
+import SectionScrollButton from "../components/SectionScrollButton";
 
 const HeroSection: React.FC = () => {
     return (
-        <div className="w-full bg-white flex justify-center items-center">
+        <div id="fact" className="w-full bg-white flex justify-center items-center">
             <div className="flex self-stretch px-16 py-28 flex-row justify-between items-center gap-10">
                 <div className="flex flex-col justify-center items-start gap-8">
                     {/* Text Block */}

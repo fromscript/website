@@ -1,6 +1,7 @@
 import type {NextPage} from 'next';
 import Image from "next/image";
 import React from "react";
+import SectionScrollButton from "./SectionScrollButton";
 
 const Navbar: NextPage = () => {
     return (
@@ -17,29 +18,12 @@ const Navbar: NextPage = () => {
                 </div>
                 <div className="justify-center items-center gap-8 flex">
                     <div className="justify-end items-center gap-8 flex">
-                        <div className="justify-center items-center gap-1 flex">
-                            <button className="text-white text-base font-semibold leading-normal">
-                                Accueil
-                            </button>
-                        </div>
-                        <div className="justify-center items-center gap-1 flex">
-                            <button className="text-white text-base font-semibold leading-normal">
-                                Services
-                            </button>
-                        </div>
-                        <div className="justify-center items-center gap-1 flex">
-                            <button className="text-white text-base font-semibold leading-normal">
-                                À propos
-                            </button>
-                        </div>
+                        <SectionScrollButton text="Accueil" className="text-white text-base font-semibold leading-normal" targetSection="landing" />
+                        <SectionScrollButton text="Services" className="text-white text-base font-semibold leading-normal" targetSection="services" />
+                        <SectionScrollButton text="À propos" className="text-white text-base font-semibold leading-normal" targetSection="about" />
                     </div>
                     <div className="justify-center items-center gap-4 flex">
-                        <div
-                            className="px-5 py-2 rounded-full border-2 border-blue-500 justify-center items-center gap-3 flex">
-                            <button
-                                className="text-white text-base font-extrabold leading-normal">Contact
-                            </button>
-                        </div>
+                        <SectionScrollButton text="Contact" className="px-5 py-2 rounded-full border-2 border-blue-500 text-white text-base font-extrabold leading-normal" targetSection="contact" />
                     </div>
                 </div>
             </div>

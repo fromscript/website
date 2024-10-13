@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, ReactNode } from 'react';
 import Head from 'next/head';
-import LoadingScreen from '../components/LoadingScreen'; // Adjust this path if necessary
+import LoadingScreen from '../sections/LoadingScreen'; // Adjust this path if necessary
 import "./globals.css";
 
 type RootLayoutProps = {

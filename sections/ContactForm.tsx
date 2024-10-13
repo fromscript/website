@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import React from "react";
-import FormField from './FormField';
-import CheckboxField from "./CheckboxField";
+import FormField from '../components/FormField';
+import CheckboxField from "../components/CheckboxField";
 
 const ContactForm: NextPage = () => {
     return (
@@ -48,23 +48,23 @@ const ContactForm: NextPage = () => {
                                 </a>
                             </div>
                         </div>
-                        <div className="grow shrink basis-0 flex-col justify-start items-start gap-4 inline-flex">
-                            <div className="w-8 h-8 relative"/>
-                            <div className="self-stretch h-[92px] flex-col justify-start items-start gap-2 flex">
-                                <h2 className="self-stretch text-blue-700 text-xl font-bold font-brockmann leading-7">
-                                    Téléphone
-                                </h2>
-                                <p className="self-stretch text-blue-700 text-base font-normal  leading-normal">
-                                    Appelez-nous pour plus d'infos.
-                                </p>
-                                <a
-                                    href="tel:+15550000000"
-                                    className="self-stretch text-blue-500 text-base font-normal font-['Roboto'] underline leading-normal"
-                                >
-                                    +1 (555) 000-0000
-                                </a>
-                            </div>
-                        </div>
+                        {/*<div className="grow shrink basis-0 flex-col justify-start items-start gap-4 inline-flex">*/}
+                        {/*    <div className="w-8 h-8 relative"/>*/}
+                        {/*    <div className="self-stretch h-[92px] flex-col justify-start items-start gap-2 flex">*/}
+                        {/*        <h2 className="self-stretch text-blue-700 text-xl font-bold font-brockmann leading-7">*/}
+                        {/*            Téléphone*/}
+                        {/*        </h2>*/}
+                        {/*        <p className="self-stretch text-blue-700 text-base font-normal  leading-normal">*/}
+                        {/*            Appelez-nous pour plus d'infos.*/}
+                        {/*        </p>*/}
+                        {/*        <a*/}
+                        {/*            href="tel:+15550000000"*/}
+                        {/*            className="self-stretch text-blue-500 text-base font-normal font-['Roboto'] underline leading-normal"*/}
+                        {/*        >*/}
+                        {/*            +1 (555) 000-0000*/}
+                        {/*        </a>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                     </div>
                     <div className="h-[148px] flex-col justify-start items-start gap-4 flex">
                         <div className="w-8 h-8 relative"/>
@@ -72,17 +72,17 @@ const ContactForm: NextPage = () => {
                             <h2 className="w-[447px] text-blue-700 text-xl font-bold font-brockmann leading-7">
                                 Situé à Québec, disponible partout
                             </h2>
-                            <p className="self-stretch text-blue-500 text-base font-normal  leading-normal">
-                                Adresse, si on veut la mettre
-                            </p>
-                            <div className="flex-col justify-start items-start gap-4 flex">
-                                <a
-                                    href="#"
-                                    className="justify-center items-center gap-2 inline-flex text-blue-700 text-base font-normal  leading-normal"
-                                >
-                                    Obtenir l'itinéraire
-                                </a>
-                            </div>
+                            {/*<p className="self-stretch text-blue-500 text-base font-normal  leading-normal">*/}
+                            {/*    Adresse, si on veut la mettre*/}
+                            {/*</p>*/}
+                            {/*<div className="flex-col justify-start items-start gap-4 flex">*/}
+                            {/*    <a*/}
+                            {/*        href="#"*/}
+                            {/*        className="justify-center items-center gap-2 inline-flex text-blue-700 text-base font-normal  leading-normal"*/}
+                            {/*    >*/}
+                            {/*        Obtenir l'itinéraire*/}
+                            {/*    </a>*/}
+                            {/*</div>*/}
                         </div>
                     </div>
                 </div>

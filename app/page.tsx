@@ -2,15 +2,15 @@
 import Navbar from "../components/Navbar";
 import React from "react";
 import Footer from "../components/Footer";
-import ContactForm from "../components/ContactForm";
-import LandingScreen from "../components/LandingScreen";
+import ContactForm from "../sections/ContactForm";
+import LandingScreen from "../sections/LandingScreen";
 import OpenSourceProjectSection from "../components/OpenSourceProjectSection";
 import PreviousClientSection from "../components/PreviousClientSection";
 import InfiniteMarquee from "../components/InfiniteLooper";
-import AboutSection from "../components/AboutSection";
-import HeroSection from "../components/HeroSection";
-import ServiceSection from "../components/ServiceSection";
-import TimeLineSection from "../components/TimeLineSection";
+import AboutSection from "../sections/AboutSection";
+import HeroSection from "../sections/HeroSection";
+import ServiceSection from "../sections/ServiceSection";
+import TimeLineSection from "../sections/TimeLineSection";
 
 export default function Home() {
     return (

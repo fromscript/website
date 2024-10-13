@@ -18,7 +18,7 @@ const LoadingScreen: React.FC = () => {
     }, []);
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-fond3">
+        <section id="loading" className="flex flex-col items-center justify-center h-screen bg-fond3">
             <Image
                 priority
                 src="logos/H_bleu.svg"
@@ -36,7 +36,7 @@ const LoadingScreen: React.FC = () => {
                 <p>Chargement...</p>
                 <p>{progress}%</p>
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -6,26 +6,33 @@ import {Parallax, ParallaxProvider} from 'react-scroll-parallax';
 const AboutSection: React.FC = () => {
     return (
         <ParallaxProvider>
-            <div className="w-screen h-auto bg-white flex flex-col items-center relative overflow-hidden">
-                <div className="self-stretch flex flex-col px-16 py-28 overflow-hidden h-72">
-                    <Parallax translateX={[80, 15]} easing="easeOutQuad">
-                        <div className="text-blue-700 text-8xl font-bold font-brockmann">
-                            La technologie
-                        </div>
+            <section id="about" className="w-screen h-auto bg-white flex flex-col items-center relative overflow-hidden">
+                <div className="self-stretch flex justify-center items-center flex-col px-16 py-28 overflow-hidden h-72">
+                    <Parallax
+                        className="text-blue-700 text-8xl font-bold font-brockmann"
+                        translateX={[60, -40]}
+                        easing="easeOutQuad"
+                        disabled={false}
+                    >
+                        La technologie
                     </Parallax>
-                    <Parallax translateX={[15, 55]} easing="easeOutQuad">
-                        <div className="text-blue-700 text-8xl font-bold font-brockmann">
-                            accessible à tous
-                        </div>
+                    <Parallax
+                        className="text-start text-blue-700 text-8xl font-bold font-brockmann"
+                        translateX={[-60, 40]}
+                        easing="easeOutQuad"
+                        disabled={false}
+                    >
+                        accessible à tous
                     </Parallax>
                 </div>
-                <div className="w-full h-auto px-16 py-28 bg-white flex justify-between items-center">
-                    <div className="flex-grow flex flex-col justify-center items-center text-left">
+
+                <div className="self-stretch h-auto px-16 py-28 bg-white flex justify-center items-center gap-20">
+                    <div className="flex flex-col justify-center items-center text-left">
                         <div className="text-blue-500 text-[40px] font-bold font-brockmann leading-tight">
                             Découvrez l'expertise de<br/>FromScript en développement<br/>logiciel et sécurité<br/>informatique.
                         </div>
                     </div>
-                    <div className="flex-grow flex flex-col justify-center items-center text-left">
+                    <div className="flex flex-col justify-center items-center text-left">
                         <div className="justify-start">
                             <p className="text-blue-700 text-lg font-normal leading-7">
                                 Avec plus de 8 ans d'expérience, FromScript se spécialise dans le<br/>développement de
@@ -40,7 +47,7 @@ const AboutSection: React.FC = () => {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </ParallaxProvider>
     );
 };
