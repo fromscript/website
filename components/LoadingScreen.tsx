@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import Logo from '../public/logos/icone_couleur.svg';  // Adjust the import path as necessary
 
-const LoadingScreen = () => {
-    const [progress, setProgress] = useState(0);
+const LoadingScreen: React.FC = () => {
+    const [progress, setProgress] = useState<number>(0);
 
     useEffect(() => {
         const timer = setInterval(() => {
@@ -12,9 +11,9 @@ const LoadingScreen = () => {
                     clearInterval(timer);
                     return 100;
                 }
-                return Math.min(oldProgress + 20, 100);  // Simulating loading progress
+                return Math.min(oldProgress + 5, 100);
             });
-        }, 1000);  // Simulate loading progress
+        }, 100);
         return () => clearInterval(timer);
     }, []);
 
@@ -22,15 +21,21 @@ const LoadingScreen = () => {
         <div className="flex flex-col items-center justify-center h-screen bg-fond3">
             <Image
                 priority
-                src="logos/H_couleur.svg"
+                src="logos/H_bleu.svg"
                 height={238}
                 width={554}
-                alt="Follow us on Twitter"
+                alt="FromScript Technologie"
             />
-            <div className="relative w-3/4 h-4 bg-white">
-                <div className="absolute top-0 left-0 h-full bg-blue-500" style={{ width: `${progress}%` }}></div>
+            <div className="relative w-1/2 mt-8 h-2 bg-white">
+                <div
+                    className="absolute top-0 left-0 h-full bg-blue-500 transition-all ease-linear"
+                    style={{width: `${progress}%`}}
+                ></div>
             </div>
-            <p className="text-white mt-2">Chargement... {progress}%</p>
+            <div className="flex justify-between w-1/2 text-white mt-2">
+                <p>Chargement...</p>
+                <p>{progress}%</p>
+            </div>
         </div>
     );
 };
