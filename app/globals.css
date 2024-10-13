@@ -15,7 +15,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    /*overflow-x: hidden; !* Prevent horizontal scroll *!*/
 }
 
 body {
@@ -27,10 +27,22 @@ body {
     box-sizing: border-box;
 }
 
-.backface-hidden {
-    backface-visibility: hidden;
+html {
+    scroll-behavior: smooth;
 }
 
-.rotate-y-180 {
-    transform: rotateY(180deg);
+body {
+    margin: 0; line-height: normal;
+}
+
+.bg-fond3 {
+    background-image: url('../public/background/fond_3.svg');
+    background-size: cover;  /* Cover the entire screen */
+    background-position: center; /* Center the background image */
+}
+
+.bg-fond2 {
+    background-image: url('../public/background/fond_2.svg');
+    background-size: cover;  /* Cover the entire screen */
+    background-position: center; /* Center the background image */
 }
