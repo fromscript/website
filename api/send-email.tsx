@@ -34,6 +34,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             res.status(500).json({ message: 'Error sending email', error });
         }
     } else {
-        res.status(405).json({ message: 'Method not allowed' });
+        res.status(405).json({ message: `Method ${req.method} Not Allowed` });
     }
 }
