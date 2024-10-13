@@ -22,6 +22,10 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
         return () => clearTimeout(timer);
     }, []);
 
+    const handleLoadingComplete = () => {
+        setIsLoading(false);
+    };
+
     return (
         <html lang="en">
         <Head>
@@ -30,7 +34,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
         </Head>
         <body className="flex flex-col min-h-screen w-full">
         {isLoading ? (
-            <LoadingScreen />
+            <LoadingScreen onLoadingComplete={handleLoadingComplete} />
         ) : (
             <div className="flex flex-col flex-grow">
                 <div className="flex flex-grow">

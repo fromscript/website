@@ -1,9 +1,81 @@
-import { NextPage } from "next";
-import React from "react";
-import FormField from '../components/FormField';
+import {NextPage} from "next";
+import React, {useState} from "react";
+import FormField from "../components/FormField";
 import CheckboxField from "../components/CheckboxField";
 
 const ContactForm: NextPage = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        projectType: "",
+        message: "",
+        contactAccepted: false,
+        privacyPolicyAccepted: false,
+    });
+
+    const [loading, setLoading] = useState(false);
+    const [success, setSuccess] = useState(false);
+    const [error, setError] = useState<string | null>(null);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const {name, value, type} = e.target;
+
+        if (type === 'checkbox') {
+            const {checked} = e.target as HTMLInputElement; // Explicitly cast as HTMLInputElement
+            setFormData({
+                ...formData,
+                [name]: checked,
+            });
+        } else {
+            setFormData({
+                ...formData,
+                [name]: value,
+            });
+        }
+    };
+
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setLoading(true);
+        setError(null);
+
+        if (!formData.contactAccepted || !formData.privacyPolicyAccepted) {
+            setError("You must accept the contact and privacy policy.");
+            setLoading(false);
+            return;
+        }
+
+        try {
+            const response = await fetch("/api/send-email", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setSuccess(true);
+                setFormData({
+                    name: "",
+                    email: "",
+                    projectType: "",
+                    message: "",
+                    contactAccepted: false,
+                    privacyPolicyAccepted: false,
+                });
+            } else {
+                const errorData = await response.json();
+                setError(errorData.message || "Error submitting the form.");
+            }
+        } catch (error) {
+            setError("An error occurred while sending your message.");
+        } finally {
+            setLoading(false);
+        }
+    };
+
     return (
         <section id="contact" className="w-full flex px-16 py-28 bg-white flex-col justify-center items-center gap-12">
             <div className="self-stretch pb-8 justify-center items-center gap-4 flex">
@@ -17,18 +89,48 @@ const ContactForm: NextPage = () => {
                 </div>
             </div>
             <div className="flex justify-center items-start gap-20">
-                <div className="w-[616px] flex-col justify-start items-start gap-6 inline-flex">
-                    <FormField label="Nom" type="text"/>
-                    <FormField label="Email" type="email"/>
-                    <FormField label="Type de projet" type="text"/>
-                    <FormField label="Message" type="textarea"/>
-                    <CheckboxField label="J'accepte de me faire contacter"/>
-                    <CheckboxField label="J'accepte la politique de confidentialité"/>
-                    <button
-                        className="px-6 py-3 bg-blue-700 rounded-[30px] border-2 border-blue-700 text-red-100 text-xl font-bold font-brockmann leading-7">
-                        Envoyer
-                    </button>
-                </div>
+                <form onSubmit={handleSubmit} className="flex justify-center items-start gap-20">
+                    <div className="w-[616px] flex-col justify-start items-start gap-6 inline-flex">
+                        <FormField label="Nom" type="text" name="name" value={formData.name} onChange={handleChange}/>
+                        <FormField label="Email" type="email" name="email" value={formData.email}
+                                   onChange={handleChange}/>
+                        <FormField
+                            label="Type de projet"
+                            type="text"
+                            name="projectType"
+                            value={formData.projectType}
+                            onChange={handleChange}
+                        />
+                        <FormField
+                            label="Message"
+                            type="textarea"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                        />
+                        <CheckboxField
+                            label="J'accepte de me faire contacter"
+                            name="contactAccepted"
+                            checked={formData.contactAccepted}
+                            onChange={handleChange}
+                        />
+                        <CheckboxField
+                            label="J'accepte la politique de confidentialité"
+                            name="privacyPolicyAccepted"
+                            checked={formData.privacyPolicyAccepted}
+                            onChange={handleChange}
+                        />
+                        {error && <div className="text-red-500">{error}</div>}
+                        {success && <div className="text-green-500">Votre message a été envoyé avec succès.</div>}
+                        <button
+                            type="submit"
+                            disabled={loading}
+                            className="px-6 py-3 bg-blue-700 rounded-[30px] border-2 border-blue-700 text-red-100 text-xl font-bold font-brockmann leading-7"
+                        >
+                            {loading ? "Envoi..." : "Envoyer"}
+                        </button>
+                    </div>
+                </form>
                 <div className="grow shrink basis-0 flex-col justify-start items-start gap-10 inline-flex">
                     <div className="self-stretch justify-start items-start gap-6 inline-flex">
                         <div className="grow shrink basis-0 flex-col justify-start items-start gap-4 inline-flex">
@@ -88,7 +190,8 @@ const ContactForm: NextPage = () => {
                 </div>
             </div>
         </section>
-        );
-        };
+    )
+        ;
+};
 
-        export default ContactForm;
+export default ContactForm;
