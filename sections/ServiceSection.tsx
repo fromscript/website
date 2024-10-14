@@ -105,60 +105,58 @@ export const ServiceSection = (props: Layout351Props) => {
 // };
 
 export const Layout351Defaults: Layout351Props = {
-    tagline: "Tagline",
-    heading: "Medium length section heading goes here",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-
     features: [
         {
             columnText: "01",
-            verticalText: "Feature one",
-            horizontalText: "Feature one",
-            heading: "Short heading goes here",
+            verticalText: "Développement d'application",
+            horizontalText: "Développement Web & Mobile",
+            heading: "Développement d'application web et mobile",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+                "Nous concevons des applications sur mesure, adaptées à vos besoins, qu'elles soient destinées au web ou aux appareils mobiles. Nos solutions sont modernes, performantes, et sécurisées.",
             image: {
-                src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-                alt: "Relume placeholder image 1",
+                src: "/services/developement.webp", // Adjust the path based on your project structure
+                alt: "Développement d'application web et mobile",
             },
         },
         {
             columnText: "02",
-            verticalText: "Feature two",
-            horizontalText: "Feature two",
-            heading: "Short heading goes here",
+            verticalText: "Consultation logiciel",
+            horizontalText: "Consultation",
+            heading: "Consultation logiciel",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+                "Nos experts vous accompagnent dans toutes les étapes de la création de logiciels. De la conception à la mise en œuvre, nous fournissons des conseils stratégiques et techniques pour garantir le succès de votre projet.",
             image: {
-                src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-                alt: "Relume placeholder image 2",
+                src: "/services/consulation.webp", // Adjust the path based on your project structure
+                alt: "Consultation logiciel",
             },
         },
         {
             columnText: "03",
-            verticalText: "Feature three",
-            horizontalText: "Feature three",
-            heading: "Short heading goes here",
+            verticalText: "Solution Open Source",
+            horizontalText: "Open Source",
+            heading: "Solution Open Source",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+                "Nous intégrons et développons des solutions open source qui réduisent les coûts et augmentent la flexibilité de votre infrastructure technologique. Nous assurons une personnalisation complète pour répondre à vos besoins spécifiques.",
             image: {
-                src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-                alt: "Relume placeholder image 3",
+                src: "/services/opensource.webp", // Adjust the path based on your project structure
+                alt: "Solution Open Source",
             },
         },
         {
             columnText: "04",
-            verticalText: "Feature four",
-            horizontalText: "Feature four",
-            heading: "Short heading goes here",
+            verticalText: "Analyse de sécurité",
+            horizontalText: "Sécurité",
+            heading: "Analyse de sécurité",
             description:
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+                "Nous offrons des services d’analyse approfondie pour garantir la sécurité de vos systèmes informatiques. De la gestion des vulnérabilités à la protection des données, nous assurons la sécurité de vos infrastructures numériques.",
             image: {
-                src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-                alt: "Relume placeholder image 4",
+                src: "/services/security.webp", // Adjust the path based on your project structure
+                alt: "Analyse de sécurité",
             },
         },
     ],
 };
+
+
 
 export default ServiceSection;
