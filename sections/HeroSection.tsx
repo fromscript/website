@@ -35,7 +35,7 @@ const HeroSection: React.FC = () => {
                 {/* Image Section */}
                 <div className="flex justify-center items-center">
                     <Image
-                        src='logos/icone_couleur.svg'
+                        src='hero/cookies.webp'
                         alt="Image related to cookies and data protection"
                         width={400}
                         height={400}
