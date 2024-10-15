@@ -12,7 +12,7 @@ const InfiniteMarquee: React.FC = () => {
     ];
 
     return (
-        <div className="w-full bg-blue-700 self-stretch flex items-center">
+        <div className="bg-blue-700 self-stretch flex justify-center items-center">
             <Marquee className="h-24" gradient={false} speed={50} pauseOnHover={true} autoFill={true}>
                 {items.map((item, index) => (
                     <div key={index} className="px-8 text-blue-500 text-6xl font-bold font-brockmann leading-7">

@@ -4,34 +4,37 @@ import React from 'react';
 import SectionScrollButton from '../components/SectionScrollButton';
 
 const LandingText: React.FC = () => (
-    <div className="flex-col justify-center items-center gap-6 flex">
-        <div className="flex-grow justify-center text-red-100 text-6xl font-bold font-brockmann">
+    <div className="flex flex-col justify-center items-center gap-4">
+        <div className="text-red-100 text-6xl md:text-5xl sm:text-4xl font-bold font-brockmann text-center">
             {`{FromScript}`}
         </div>
-        <div className="self-stretch text-center">
-      <span className="text-red-100 text-xl font-bold font-brockmann">
-        Nom masculin
-        <br/>
-      </span>
-            <span className="text-red-100 text-lg font-normal">
-        Déf.: La version moderne du concept «from scratch» appliquée au web.
-      </span>
+        <div className="text-center">
+            <span className="block text-red-100 text-xl md:text-lg sm:text-base font-bold font-brockmann">
+                Nom masculin
+            </span>
+            <span className="block text-red-100 text-lg md:text-base sm:text-sm font-normal">
+                Déf.: La version moderne du concept «from scratch» appliquée au web.
+            </span>
         </div>
     </div>
 );
 
 const LandingScreen: React.FC = () => {
     return (
-        <section id="landing" className="w-screen h-screen flex-grow justify-center items-center inline-flex bg-fond3">
-            <div className="w-2/4 flex-col justify-start items-center gap-8 inline-flex">
-                <LandingText/>
-                <div className="justify-start items-start gap-4 inline-flex">
-                    <SectionScrollButton text="En savoir plus"
-                                         className="px-6 py-3 bg-white rounded-full border border-white text-blue-700 text-xl font-bold font-brockmann leading-7"
-                                         targetSection="about"/>
-                    <SectionScrollButton text="Contact"
-                                         className="px-6 py-3 rounded-full border-2 border-white text-white text-xl font-bold font-brockmann"
-                                         targetSection="contact"/>
+        <section id="landing" className="w-full h-screen flex justify-center items-center bg-fond3">
+            <div className="w-3/4 lg:w-2/4 md:w-3/4 sm:w-full flex flex-col justify-center items-center gap-8">
+                <LandingText />
+                <div className="flex flex-col sm:flex-row justify-center sm:justify-start items-center sm:items-start gap-4">
+                    <SectionScrollButton
+                        text="En savoir plus"
+                        className="px-6 py-3 bg-white border border-white text-blue-700 text-xl font-bold font-brockmann leading-7"
+                        targetSection="about"
+                    />
+                    <SectionScrollButton
+                        text="Contact"
+                        className="px-6 py-3 border-2 border-white text-white text-xl font-bold font-brockmann"
+                        targetSection="contact"
+                    />
                 </div>
             </div>
         </section>

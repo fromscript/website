@@ -1,50 +1,37 @@
-import { NextPage } from "next";
-import React from "react";
-import Image from "next/image";
+// components/Footer.tsx
+import React from 'react';
+import Image from 'next/image';
+import FooterLink from './FooterLink';
 import SectionScrollButton from "./SectionScrollButton";
 
-type LinkItemProps = {
-    text: string;
-    onClick?: () => void;
-    isBlue?: boolean;
-};
-
-const LinkItem: React.FC<LinkItemProps> = ({ text, onClick, isBlue }) => {
+const Footer: React.FC = () => {
     return (
-        <button
-            onClick={onClick}
-            className={`text-sm font-normal ${isBlue ? "text-blue-500 underline" : "text-white"} `}
-        >
-            {text}
-        </button>
-    );
-};
-
-const Footer: NextPage = () => {
-    return (
-        <footer className="w-full h-72 flex flex-col pr-10 pl-10 bg-blue-700">
-            <div className="flex-grow h-3/4 flex items-center">
-                <div className="flex-1 flex justify-start items-center">
+        <footer className="w-full bg-blue-700 py-8 px-10">
+            <div className="flex flex-row justify-between items-center gap-6 md:gap-0">
+                <div className="flex justify-start items-center">
                     <Image
-                        priority
-                        src="logos/H_bleu.svg"
+                        src="/logos/H_bleu.svg"
                         height={109.36}
                         width={279}
-                        alt="FromScript"
+                        alt="FromScript Logo"
                     />
                 </div>
-                <div className="flex-1 flex justify-end items-center gap-8">
-                    <SectionScrollButton text="À propos" className="text-white text-base font-semibold leading-normal" targetSection="about" />
+                <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-8">
+                    <SectionScrollButton text="À propos" className="text-white text-base font-semibold leading-normal" targetSection="about"/>
                     <SectionScrollButton text="Services" className="text-white text-base font-semibold leading-normal" targetSection="services" />
                     <SectionScrollButton text="Contact" className="text-white text-base font-semibold leading-normal" targetSection="contact" />
                 </div>
             </div>
-            <div className="h-px border border-blue-500" />
-            <div className="flex justify-center items-center gap-6 p-5">
-                <div className="text-white text-sm font-normal">© 2024 FromScript. Tous droits réservés.</div>
-                <LinkItem text="Politique de confidentialité" isBlue />
-                <LinkItem text="Conditions d'utilisation" isBlue />
-                <LinkItem text="Paramètres des cookies" isBlue />
+            <div className="mt-6 border-t border-blue-500"></div>
+            <div className="flex flex-col md:flex-row justify-between items-center mt-6 text-sm">
+                <div className="text-white text-center md:text-left">
+                    © 2024 FromScript. Tous droits réservés.
+                </div>
+                <div className="flex gap-4 mt-4 md:mt-0">
+                    <FooterLink text="Politique de confidentialité" className="text-blue-500 underline" href="/privacy-policy" />
+                    <FooterLink text="Conditions d'utilisation" className="text-blue-500 underline" href="/terms" />
+                    <FooterLink text="Paramètres des cookies" className="text-blue-500 underline" href="/cookie-settings" />
+                </div>
             </div>
         </footer>
     );
