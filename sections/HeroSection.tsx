@@ -4,7 +4,7 @@ import SectionScrollButton from "../components/SectionScrollButton";
 
 const HeroSection: React.FC = () => {
     return (
-        <div id="fact" className="w-full py-12 bg-white flex justify-center items-center">
+        <div id="fact" className="w-full md:px-12 py-12 bg-white flex justify-center items-center">
             <div className="flex self-stretch flex-row justify-between items-center gap-10">
                 <div className="flex flex-col justify-center items-center md:items-start gap-8">
                     <div
