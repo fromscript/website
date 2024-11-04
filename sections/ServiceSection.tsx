@@ -19,15 +19,10 @@ export const ServiceSection = (props: Layout351Props) => {
     ...props,
   } as Props;
 
-  const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [activeIndex, setActiveIndex] = useState(0); // Default to index 1
 
   const handleSetIsActive = (index: number) => {
-    setActiveIndex((prevIndex) => {
-      if (prevIndex === index && features.filter((_, i) => i === prevIndex).length === 1) {
-        return prevIndex;
-      }
-      return prevIndex === index ? null : index;
-    });
+    setActiveIndex((prevIndex) => (prevIndex === index ? prevIndex : index));
   };
 
   return (
@@ -44,7 +39,7 @@ export const ServiceSection = (props: Layout351Props) => {
         </div>
 
         <div
-          className="flex bg-white w-full flex-row overflow-hidden rounded-3xl h-auto">
+          className="flex max-w-xl w-full bg-white flex-col lg:flex-row overflow-hidden rounded-3xl h-full lg:h-[750px]">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}
