@@ -39,7 +39,7 @@ export const ServiceSection = (props: Layout351Props) => {
         </div>
 
         <div
-          className="flex max-w-xl w-full bg-white flex-col lg:flex-row overflow-hidden rounded-3xl h-full lg:h-[750px]">
+          className="flex lg:w-3/4 w-full bg-white flex-col lg:flex-row overflow-hidden rounded-3xl h-full lg:h-[750px]">
           {features.map((feature, index) => (
             <FeatureCard
               key={index}

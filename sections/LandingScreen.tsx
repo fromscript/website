@@ -5,7 +5,7 @@ import SectionScrollButton from '../components/SectionScrollButton';
 
 const LandingText: React.FC = () => (
     <div className="flex flex-col justify-center items-center gap-4">
-        <div className="text-red-100 text-6xl md:text-5xl sm:text-4xl font-bold font-brockmann text-center">
+        <div className="text-red-100 text-4xl md:text-5xl font-bold font-brockmann text-center">
             {`{FromScript}`}
         </div>
         <div className="text-center">
@@ -22,7 +22,7 @@ const LandingText: React.FC = () => (
 const LandingScreen: React.FC = () => {
     return (
         <section id="landing" className="w-full h-screen flex justify-center items-center bg-fond3">
-            <div className="w-3/4 lg:w-2/4 md:w-3/4 sm:w-full flex flex-col justify-center items-center gap-8">
+            <div className="w-3/4 lg:w-2/4 md:w-3/4 flex flex-col justify-center items-center gap-8">
                 <LandingText />
                 <div className="flex flex-col sm:flex-row justify-center sm:justify-start items-center sm:items-start gap-4">
                     <SectionScrollButton

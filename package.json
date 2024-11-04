@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@relume_io/relume-tailwind": "^0.6.0",
-    "@relume_io/relume-ui": "^0.6.0",
     "framer-motion": "^11.11.8",
     "next": "14.2.12",
     "nodemailer": "^6.9.15",

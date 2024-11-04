@@ -1,5 +1,5 @@
-import {useMediaQuery} from "@relume_io/relume-ui";
 import {motion} from "framer-motion";
+import useIsMobile from "../hook/useIsMobile";
 
 type ImageProps = {
   src: string;
@@ -18,9 +18,8 @@ type FeatureWithState = Feature & {
   isActive: boolean;
   setIsActive: () => void;
 };
-// min-w-full cursor-pointer border-t border-border-primary py-8 md:h-20 lg:h-[90vh] lg:w-20 lg:min-w-20 lg:flex-col lg:justify-between lg:border-none">
 const FeatureCard = ({isActive, setIsActive, ...feature}: FeatureWithState) => {
-  const isMobile = useMediaQuery("(max-width: 991px)");
+  const isMobile = useIsMobile();
   const CardContent = isMobile ? motion.div : "div";
   return (
     <motion.div className="flex self-stretch h-full w-full bg-white overflow-hidden border border-black flex-col lg:flex-row"
