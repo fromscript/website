@@ -3,6 +3,7 @@
 import React from "react";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import SectionScrollButton from "../components/SectionScrollButton";
+import useIsMobile from "../hook/useIsMobile"; // Import the custom hook
 
 // Reusable Timeline Item Component
 const TimelineItem: React.FC<{ title: string; description: string; isLast?: boolean }> = ({
@@ -27,6 +28,8 @@ const TimelineItem: React.FC<{ title: string; description: string; isLast?: bool
 };
 
 const TimeLineSection: React.FC = () => {
+  const isMobile = useIsMobile(); // Use the custom hook to check if on mobile
+
   // Timeline Data
   const timelineData = [
     {
@@ -54,7 +57,7 @@ const TimeLineSection: React.FC = () => {
       >
         {/* Left Side: About Content */}
         <div className="flex flex-col items-center md:items-start mb-8 md:mb-0">
-          <Parallax translateY={[0, 100]} easing="easeOutQuad">
+          <Parallax translateY={[0, 100]} easing="easeOutQuad" disabled={isMobile}>
             <div className="flex flex-col items-center md:items-start">
               <div className="text-white text-sm md:text-base font-semibold font-brockmann">
                 À propos
