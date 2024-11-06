@@ -30,9 +30,10 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
         <html lang="en">
         <Head>
             <title>{metadata.title}</title>
-            <meta name="description" content={metadata.description} />
+            <meta name="description" content={metadata.description}/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         </Head>
-        <body className="flex flex-col min-h-screen w-full">
+        <body className="flex flex-col min-h-screen">
         {isLoading ? (
             <LoadingScreen onLoadingComplete={handleLoadingComplete} />
         ) : (

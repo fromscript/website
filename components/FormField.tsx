@@ -7,30 +7,25 @@ type FormFieldProps = {
 };
 
 const FormField: React.FC<FormFieldProps> = ({ label, type, name, value, onChange }) => (
-    <div className="self-stretch flex-col justify-start items-start gap-2 flex">
-        <label htmlFor={name} className="self-stretch text-blue-700 text-lg font-bold -p-3 leading-7">
-            {label}
-        </label>
+    <div className="w-full flex-col justify-start items-start gap-2 flex">
+        <label className="text-blue-700 text-lg font-bold">{label}</label>
         {type === "textarea" ? (
             <textarea
-                id={name}
                 name={name}
                 value={value}
                 onChange={onChange}
-                className="self-stretch p-3 rounded-3xl border-2 border-blue-700"
+                className="w-full p-3 rounded-3xl border-2 border-blue-700"
                 rows={6}
             />
         ) : (
             <input
-                id={name}
-                name={name}
                 type={type}
+                name={name}
                 value={value}
                 onChange={onChange}
-                className="self-stretch p-3 rounded-3xl border-2 border-blue-700"
+                className="w-full p-3 rounded-3xl border-2 border-blue-700"
             />
         )}
     </div>
 );
-
 export default FormField;

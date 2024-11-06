@@ -18,7 +18,7 @@ const SectionScrollButton: React.FC<SectionScrollButtonProps> = ({ text, classNa
 
     return (
         <div className="flex justify-center items-center gap-2">
-            <button className={className} onClick={handleScroll}>
+            <button className={`rounded-3xl whitespace-nowrap ${className}`} onClick={handleScroll}>
                 {text}
             </button>
         </div>

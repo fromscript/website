@@ -6,18 +6,15 @@ type CheckboxFieldProps = {
 };
 
 const CheckboxField: React.FC<CheckboxFieldProps> = ({ label, name, checked, onChange }) => (
-    <div className="pb-4 justify-start items-center gap-2 inline-flex">
+    <div className="flex items-center gap-2">
         <input
             type="checkbox"
             name={name}
             checked={checked}
             onChange={onChange}
-            className="w-[18px] h-[18px] relative bg-white border-2 border-blue-700"
+            className="w-5 h-5 border-2 border-blue-700 rounded-md"
         />
-        <label htmlFor={name} className="text-blue-700 text-sm font-normal leading-[21px]">
-            {label}
-        </label>
+        <label className="text-blue-700 text-sm">{label}</label>
     </div>
 );
-
 export default CheckboxField;
