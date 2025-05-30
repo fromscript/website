@@ -5,7 +5,6 @@ import Footer from "../components/Footer";
 import ContactForm from "../sections/ContactForm";
 import LandingScreen from "../sections/LandingScreen";
 import OpenSourceProjectSection from "../components/OpenSourceProjectSection";
-import PreviousClientSection from "../components/PreviousClientSection";
 import InfiniteMarquee from "../components/InfiniteLooper";
 import AboutSection from "../sections/AboutSection";
 import HeroSection from "../sections/HeroSection";
@@ -23,7 +22,6 @@ export default function Home() {
                 <InfiniteMarquee/>
                 <HeroSection/>
                 <OpenSourceProjectSection/>
-                {/*<PreviousClientSection/>*/}
                 <ContactForm/>
                 <Footer/>
             </div>

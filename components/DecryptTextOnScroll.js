@@ -46,16 +46,17 @@ const DecryptTextOnScroll = ({ text }) => {
             }
         );
 
-        if (textRef.current) {
-            observer.observe(textRef.current);
+        const currentTextRef = textRef.current; // Capture ref value for cleanup
+        if (currentTextRef) {
+            observer.observe(currentTextRef);
         }
 
         return () => {
-            if (textRef.current) {
-                observer.unobserve(textRef.current);
+            if (currentTextRef) { // Use the captured value
+                observer.unobserve(currentTextRef);
             }
         };
-    }, []);
+    }, []); // Dependency array is empty, which is correct for this observer setup.
 
     // Decrypt the text progressively once it becomes visible in the viewport
     useEffect(() => {

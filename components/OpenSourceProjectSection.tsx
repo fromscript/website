@@ -14,7 +14,7 @@ const OpenSourceProjectSection: React.FC = () => {
                     Un projet?<br/>Un concept?<br/>L'idée du siècle?
                 </h1>
                 <p className="text-blue-500 text-xl font-bold font-brockmann mt-6 leading-7">
-                    On veut l’entendre!
+                    On veut l&apos;entendre! {/* <-- APOSTROPHE ESCAPED */}
                 </p>
             </div>
             <SectionScrollButton text='Demander une consultation'
