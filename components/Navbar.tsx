@@ -36,7 +36,7 @@ const Navbar: NextPage = () => {
             </div>
 
             {/* Mobile Menu */}
-            <MobileMenu isMenuOpen={isMenuOpen} />
+            <MobileMenu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} /> {/* <-- toggleMenu prop added */}
         </nav>
     );
 };

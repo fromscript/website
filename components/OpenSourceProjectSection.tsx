@@ -11,10 +11,10 @@ const OpenSourceProjectSection: React.FC = () => {
             {/* Main Content */}
             <div className="flex-col text-center">
                 <h1 className="text-blue-700 text-4xl lg:text-5xl font-bold font-brockmann whitespace-nowrap leading-tight">
-                    Un projet?<br/>Un concept?<br/>L'idée du siècle?
+                    Un projet?<br/>Un concept?<br/>L&apos;idée du siècle?
                 </h1>
                 <p className="text-blue-500 text-xl font-bold font-brockmann mt-6 leading-7">
-                    On veut l’entendre!
+                    On veut l&apos;entendre!
                 </p>
             </div>
             <SectionScrollButton text='Demander une consultation'

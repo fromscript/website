@@ -1,9 +1,10 @@
 import {motion} from "framer-motion";
 import useIsMobile from "../hook/useIsMobile";
+import Image from "next/image"; // <-- IMPORT ADDED
 
 type ImageProps = {
   src: string;
-  alt?: string;
+  alt?: string; // width and height are not needed when using fill
 };
 export type Feature = {
   columnText: string;
@@ -52,10 +53,12 @@ const FeatureCard = ({isActive, setIsActive, ...feature}: FeatureWithState) => {
             {feature.heading}
           </h3>
           <p className="md:text-md">{feature.description}</p>
-          <div className="rt-8 mt-8 h-80 md:mt-10 md:h-[25rem] lg:mt-12">
-            <img src={feature.image.src}
-                 alt={feature.image.alt}
-                 className="size-full object-cover"/>
+          {/* MODIFIED DIV AND IMAGE BELOW */}
+          <div className="relative rt-8 mt-8 h-80 md:mt-10 md:h-[25rem] lg:mt-12">
+            <Image src={feature.image.src}
+                   alt={feature.image.alt || "Feature image"}
+                   fill
+                   objectFit="cover"/>
           </div>
         </div>
       </CardContent>
