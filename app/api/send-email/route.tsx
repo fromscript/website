@@ -1,4 +1,5 @@
 import nodemailer from 'nodemailer';
+import he from 'he';
 import { NextResponse } from 'next/server';
 
 // Simple email validation regex
@@ -51,10 +52,10 @@ export async function POST(req: Request) {
             to: 'info@fromscript.ca',
             subject: 'New WebSite Submission Request',
             text: `Name: ${name}\nEmail: ${email}\nProject Type: ${projectType}\nMessage: ${message}`,
-            html: `<p><strong>Name:</strong> ${name}</p>
-                   <p><strong>Email:</strong> ${email}</p>
-                   <p><strong>Project Type:</strong> ${projectType}</p>
-                   <p><strong>Message:</strong> ${message}</p>`,
+            html: `<p><strong>Name:</strong> ${he.escape(name)}</p>
+                   <p><strong>Email:</strong> ${he.escape(email)}</p>
+                   <p><strong>Project Type:</strong> ${he.escape(projectType)}</p>
+                   <p><strong>Message:</strong> ${he.escape(message)}</p>`,
         };
 
         await transporter.sendMail(mailOptions);
